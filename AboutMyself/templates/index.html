@@ -8,44 +8,37 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
-                <div>
-                    <h2>Основная информация:</h2>
-                    <ul class="list-group list-group-light">
-                        <li class="list-group-item border-0">ФИО: Иожица Сергей Максимович</li>
-                        <li class="list-group-item border-0">Город: Москва</li>
-                        <li class="list-group-item border-0">Возраст: 15 лет</li>
-                        <li class="list-group-item border-0">Школа: ГБОУ Лицей №1580 при МГТУ им. Баумана</li>
-                        <li class="list-group-item border-0">Класс: 10</li>
-                        <li class="list-group-item border-0">Профиль класса: Информационно-Технический</li>
-                        <li class="list-group-item border-0"><a class="link-primary" target="_blank"
-                                                                href="https://github.com/Sergey207">Гитхаб</a>
-                        </li>
-                    </ul>
-                </div>
-                <div><h2>Большие прокты:</h2>
-                    <ul class="list-group list-group-light">
-                        <li class="list-group-item border-0">FamilyCalendar (PyQt5, sqlite3)</li>
-                        <li class="list-group-item border-0">XDecy (Pygame)</li>
-                        <li class="list-group-item border-0">mint.edu (Flask, HTML, CSS)</li>
-                        <li class="list-group-item border-0">FactorioModInstaller (PyQt5, os, json)</li>
-                    </ul>
-                </div>
+                <h2>Основная информация:</h2>
+                <ul class="list-group list-group-light">
+                    {% for i in base_information %}
+                        <li class="list-group-item border-0">{{ i }}</li>
+                    {% endfor %}
+                    <li class="list-group-item border-0">
+                        <a class="link-primary" target="_blank" href="https://github.com/Sergey207">Гитхаб</a>
+                    </li>
+                </ul>
+                <h2>Большие прокты:</h2>
+                <ul class="list-group list-group-light">
+                    {% for i in big_projects %}
+                        <li class="list-group-item border-0">{{ i }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col">
                 <img class="rounded" src="{% static "img/My Photo.jpg" %}" width="250px"/>
                 <br><br>
-                <div><h2>Основные увлечения</h2>
-                    <ul class="list-group list-group-light">
-                        <li class="list-group-item border-0">Программирование</li>
-                        <li class="list-group-item border-0">Точные науки (физика, математика, информатика)</li>
-                    </ul>
-                </div>
-                <div><h2>Опыт разработки:</h2>
-                    <ul class="list-group list-group-light">
-                        <li class="list-group-item border-0">2 года в Яндекс.Лицее (с отличием)</li>
-                        <li class="list-group-item border-0">1 год в школе (Pascal)</li>
-                    </ul>
-                </div>
+                <h2>Основные увлечения</h2>
+                <ul class="list-group list-group-light">
+                    {% for i in main_hobbies %}
+                        <li class="list-group-item border-0">{{ i }}</li>
+                    {% endfor %}
+                </ul>
+                <h2>Опыт разработки:</h2>
+                <ul class="list-group list-group-light">
+                    {% for i in code_experience %}
+                        <li class="list-group-item border-0">{{ i }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
